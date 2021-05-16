@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light position-fixed">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <header id="header-title">css documentation</header>
+            <ul class=" list-group list-group-flush">
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#introduction">introduction </a>
+                </li>
+
+                <li class="nav-item list-group-item">
+                    <a class="nav-link " href="#flexbox">flexbox</a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link " href="#grid">grid</a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#floats">floats</a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#posistioning">posistioning </a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#multiple_column_layout">multiple column layout</a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#responsive_design">responsive design</a>
+                </li>
+                <li class="nav-item list-group-item">
+                    <a class="nav-link" href="#reference">reference</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="introduction">
+            <header> introduction</header>
+            <article>
+                <p>
+                    CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is, with a simple syntax example, and also covers some key terms about the language.
+                </p>
+
+                <p>
+                    A CSS comprises of style rules that are interpreted by the browser and then applied to the corresponding elements in your document. A style rule set consists of a selector and declaration block.However, the web would be a boring place if all websites
+                    looked like that. Using CSS you can control exactly how HTML elements look in the browser, presenting your markup using whatever design you like.
+                </p>
+                <h2>css syntax</h2>
+                <pre> <code>
+                        Selector {
+                            Property 1 : value;
+                             Property 2 : value;
+                            Property 3 : value;
+                     }
+                     For example:
+                          h1
+                             {
+                                 Color: red;
+                                  Text-align: center;
+                 
+                             }
+                           #unique 
+                            {
+                                  color: red;
+                            }
+                    </code></pre>
+
+            </article>
+
+        </section>
+        <section class="main-section" id="flexbox">
+            <header>flexbox</header>
+            <article>
+                <p>
+                    <em>Flexbox</em> is the short name for the Flexible Box Layout Module, designed to make it easy for us to lay things out in one dimension — either as a row or as a column. To use flexbox, you apply display: flex to the parent element
+                    of the elements you want to lay out; all its direct children then become flex items.
+                </p>
+                <img class="default internal" src="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox/flex_terms.png" style="display: block; margin: 0px auto;" width="563" height="333" loading="lazy">
+
+                <ul class="header-item">
+                    <li>The<em>main axis</em> is the axis running in the direction the flex items are being laid out in (e.g. as rows across the page, or columns down the page.) The start and end of this axis are called the main start and main end.
+                    </li>
+                    <li>The<em> cross axis</em> is the axis running perpendicular to the direction the flex items are being laid out in. The start and end of this axis are called the cross start and cross end.
+                    </li>
+                    <li>The parent element that display: flex set on it (the in our example) is called the flex container.</li>
+                    <li>The items being laid out as flexible boxes inside the flex container are called flex items (the
+                        <article> elements in our example).</li>
+                </ul>
+
+                </article>
+
+        </section>
+        <section class="main-section" id="grid">
+            <header>grid</header>
+            <article>
+                <p>
+                    While flexbox is designed for one-dimensional layout, Grid Layout is designed for two dimensions — lining things up in rows and columns.
+                </p>
+                <p>
+                    A <em>Grid</em> is a collection of horizontal and vertical lines creating a pattern against which we can line up our design elements. They help us to create designs where elements don’t jump around or change width as we move from page
+                    to page, providing greater consistency on our websites.
+                </p>
+                <p>
+                    A grid will typically have columns, rows, and then gaps between each row and column — commonly referred to as gutters.
+                </p>
+                <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids/grid.png" style="display: block; margin: 0px auto;" width="500" height="300" loading="lazy">
+
+                <h2>example</h2>
+                <pre>   <code>
+                        .wrapper {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-template-rows: 100px 100px;
+                            grid-gap: 10px;
+                        }
+                        
+                    </code>
+                </pre>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div&gt; class="wrapper"&gt;  
+                        &lt;div&gt; class="box"&gt;One&lt;&#47;div&gt;
+                        &lt;div&gt; class="box"&gt;One1&lt;&#47;div&gt;
+                        &lt;div&gt; class="box"&gt;One2&lt;&#47;div&gt;
+                        &lt;&#47;div&gt;
+                        
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="floats">
+            <header>floats</header>
+            <article>
+                <p>
+                    <em>Floating </em> an element changes the behavior of that element and the block level elements that follow it in normal flow. The element is moved to the left or right and removed from normal flow, and the surrounding content floats
+                    around the floated item.
+                </p>
+                <ul class="header-item">
+                    <li>left — Floats the element to the left.</li>
+                    <li>right — Floats the element to the right.</li>
+                    <li>none — Specifies no floating at all. This is the default value.</li>
+                    <li>inherit — Specifies that the value of the float property should be inherited from the element's parent element.</li>
+                </ul>
+                <pre>
+                      <code>
+                        &lt;h1&gt;Sample for float &lt;&#47;h1&gt;
+                        &lt;div&gt; class="box"&gt;Floats  &lt;&#47;div&gt;
+                        &lt;p&gt; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus distinctio eos ducimus molestias beatae. Similique ipsam quaerat dolorem cumque, error magnam blanditiis cum accusantium sit sunt quam! Eos, magnam cumque? &lt;&#47;p&gt;
+
+
+                      </code>
+                  </pre>
+                <pre>
+                      <code>
+                        .box {
+                            float: left;
+                            width: 150px;
+                            height: 150px;
+                            margin-right: 30px;
+                        }
+                      </code>
+                  </pre>
+            </article>
+        </section>
+        <section class="main-section" id="posistioning">
+            <header>posistioning</header>
+            <article>
+                <p>
+                    <em> Positioning </em>allows you to move an element from where it would be placed when in normal flow to another location. Positioning isn’t a method for creating your main page layouts, it is more about managing and fine-tuning the
+                    position of specific items on the page.
+                </p>
+                <ul class="header-item">
+                    <li><b>Static positioning</b> is the default that every element gets — it just means "put the element into its normal position in the document layout flow — nothing special to see here".
+                    </li>
+                    <li><b>Relative positioning</b> allows you to modify an element's position on the page, moving it relative to its position in normal flow — including making it overlap other elements on the page.
+                    </li>
+                    <li>
+                        <b>Absolute positioning</b> moves an element completely out of the page's normal layout flow, like it is sitting on its own separate layer. From there, you can fix it in a position relative to the edges of the page's element (or
+                        its nearest positioned ancestor element).
+                    </li>
+                    <li>
+                        <b>Fixed positioning</b> is very similar to absolute positioning, except that it fixes an element relative to the browser viewport, not another element. This is useful for creating effects such as a persistent navigation menu that
+                        always stays in the same place on the screen as the rest of the content scrolls.
+                    </li>
+
+                </ul>
+                <pre>
+                    <code>
+                        body {
+                            width: 500px;
+                            margin: 0 auto;
+                          }
+                          
+                          p {
+                              background-color: rgb(207,232,220);
+                              border: 2px solid rgb(79,185,227);
+                              padding: 10px;
+                              margin: 10px;
+                              border-radius: 5px;
+                          }
+                          
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="multiple_column_layout">
+            <header>multiple column layout</header>
+            <article>
+                <p>
+                    The multiple-column layout specification gives you a method of laying content out in columns, as you might see in a newspaper. This article explains how to use this feature.
+                </p>
+
+                <p>
+                    with a class of container will become our multicol container. We switch on multicol by using one of two properties column-count or column-width. The column-count property will create as many columns as the value you give it, so if you add the following
+                    CSS to your stylesheet and reload the page, you will get three columns:
+                </p>
+                <pre>
+                    <code>
+                        .container {
+                            column-count: 3;
+                          }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div&gt; class="container"&gt;
+                        <!-- &lt;h1&gt; multiple-column Layout sample&lt;&#47;h1&gt; -->
+                        &lt;p&gt; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus distinctio eos ducimus molestias beatae. Similique ipsam quaerat dolorem cumque, error magnam blanditiis cum accusantium sit sunt quam! Eos, magnam cumque? &lt;&#47;p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos beatae, consequuntur voluptates deleniti sed natus cum voluptatum. Quos voluptas nobis facere at sint eaque hic officiis, nostrum, eos, est perferendis. &lt;&#47;p&gt;
+                          &lt;&#47;div&gt;
+                    </code>
+                </pre>
+                <img src="https://thewebfor5.com/static/0bdc3073ab3d8bf5b2dce5987970c2ea/d0d8c/example.png" alt="" style="display: block; margin: 0px auto; padding: 15px;" width="500" height="300">
+            </article>
+        </section>
+        <section class="main-section" id="responsive_design">
+            <header>responsive design</header>
+            <article>
+                <p>
+                    As more diverse screen sizes have appeared on web-enabled devices, the concept of responsive web design (RWD) has appeared: a set of practices that allows web pages to alter their layout and appearance to suit different screen widths, resolutions, etc.
+                    It is an idea that changed the way we design for a multi-device web, and in this article we'll help you understand the main techniques you need to know to master it.
+                </p>
+                <ol class="header-item">
+                    <li>
+                        The first was the idea of fluid grids, something which was already being explored by Gillenwater, and can be read up on in Marcotte's article, Fluid Grids
+                    </li>
+                    <li>
+                        Using a very simple technique of setting the max-width property to 100%, images would scale down smaller if their containing column became narrower than the image's intrinsic size, but never grow larger.
+                    </li>
+                    <li>
+                        Media Queries enable the type of layout switch that Cameron Adams had previously explored using JavaScript, using only CSS. Rather than having one layout for all screen sizes, the layout could be changed.
+                    </li>
+                </ol>
+                <h2>Media Queries</h2>
+
+                <p> For example, the following media query tests to see if the current web page is being displayed as screen media (therefore not a printed document) and the viewport is at least 800 pixels wide. The CSS for the .container selector will only
+                    be applied if these two things are true.</p>
+                <pre>
+                        <code>
+                            @media screen and (min-width: 800px) {
+                                .container {
+                                  margin: 1em 2em;
+                                }
+                              }
+                        </code>
+                    </pre>
+            </article>
+        </section>
+        <section class="main-section" id="reference">
+            <header>reference</header>
+            <ul>
+                <li class="reference-link">For more details all the documents was taken from this link
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction">MDN</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</html>
